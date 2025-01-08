@@ -5,7 +5,7 @@
 )
 
 #maketitle(
-  title: "PEU 438 Assignment 2",
+  title: "PEU 438 Assignment 3",
   authors: (
     "Mohamed Hussien El-Deeb (201900052)",
   ),
@@ -14,23 +14,63 @@
 
 #tableofcontents()
 
-= Problem 1
+= 8.21
 
 
 
-= Problem 2
+= 8.23
 
 
 
-= Problem 3
+= 8.31
 
 
 
-= Problem 4
+= 8.32
 
 
 
-= Problem 5
+= 8.33
+
+
+
+= 8.41
+
+
+
+= 8.42
+
+
+
+= 8.43
+
+
+
+= 8.44
+
+
+
+= 8.45
+
+
+
+= 8.46
+
+
+
+= 8.51
+
+
+
+= 8.52
+
+
+
+= 8.53
+
+
+
+= 8.54
 
 
 
