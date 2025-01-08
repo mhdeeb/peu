@@ -1,8 +1,6 @@
 #import "/templates/latex.typ": *
 
-#show: article.with(
-  heading-numbering: none,
-)
+#show: article.with(heading-numbering: none)
 
 #maketitle(
   title: "PEU 438 Assignment 3",

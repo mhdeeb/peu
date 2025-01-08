@@ -9,7 +9,8 @@
   page-numbering: "1",
   page-numbering-align: center,
   heading-numbering: "1.1  ",
-  body) = {
+  body,
+) = {
   set page(
     margin: (left: 25mm, right: 25mm, top: 30mm, bottom: 30mm),
     numbering: page-numbering,
@@ -20,25 +21,33 @@
   show math.equation: set text(weight: 400)
   set math.equation(numbering: eq-numbering)
   set heading(numbering: heading-numbering)
-  show heading: (it) => [#v(10pt)#it#v(10pt)]
-  show heading.where(level: 1): it => { pagebreak(weak: true); it }
+  show heading: it => [#v(10pt)#it#v(10pt)]
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    it
+  }
   set outline(indent: auto)
   show outline.entry: it => {
-    link(it.element.location())[#text(size:11pt ,[
-      #text(RoyalBlue4, it.body)
-      #box(width: 1fr, repeat[~.~])
-      #it.page
-    ])]}
-  show outline.entry.where(
-    level: 1,
-  ): it => {
+    link(it.element.location())[#text(
+        size: 11pt,
+        [
+          #text(RoyalBlue4, it.body)
+          #box(width: 1fr, repeat[~.~])
+          #it.page
+        ],
+      )]
+  }
+  show outline.entry.where(level: 1): it => {
     v(15pt, weak: true)
-    link(it.element.location())[#text(size:11pt ,[
-      #text(RoyalBlue4, weight: "bold", it.body)
-      #box(width: 1fr, repeat[])
-      #strong(it.page)
-    ])]
-}
+    link(it.element.location())[#text(
+        size: 11pt,
+        [
+          #text(RoyalBlue4, weight: "bold", it.body)
+          #box(width: 1fr, repeat[])
+          #strong(it.page)
+        ],
+      )]
+  }
 
   set table(
     stroke: none,
@@ -60,8 +69,8 @@
       }
       [*: *]
       it.caption.body
-    
-    it.body
+
+      it.body
     }
     v(15pt, weak: true)
   }
@@ -96,16 +105,16 @@
 }
 
 #let maketitle(
-  title: "", 
-  authors: (), 
-  date: true, 
+  title: "",
+  authors: (),
+  date: true,
 ) = {
   if (date) {
-    date = datetime.today().display("[day padding:none]. [month repr:long] [year]");
+    date = datetime.today().display("[day padding:none]. [month repr:long] [year]")
   } else {
-    date = none;
+    date = none
   }
-  
+
   set document(author: authors, title: title)
   let authors-text = {
     set text(size: 1.1em)
@@ -118,8 +127,9 @@
         gutter: 1em,
         ..authors.map(author => align(center, author)),
       ),
-  )}
-  
+    )
+  }
+
   align(center)[
     #v(60pt)
     #block(text(weight: 400, 18pt, title))
