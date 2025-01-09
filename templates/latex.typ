@@ -9,6 +9,7 @@
   page-numbering: "1",
   page-numbering-align: center,
   heading-numbering: "1.1  ",
+  enum-numbering: it => strong(numbering("a)", it)),
   body,
 ) = {
   set page(
@@ -16,7 +17,7 @@
     numbering: page-numbering,
     number-align: page-numbering-align,
   )
-  set enum(numbering: (it => strong(numbering("a)", it))))
+  set enum(numbering: enum-numbering)
   set text(font: "New Computer Modern", lang: lang, size: text-size)
   show math.equation: set text(weight: 400)
   set math.equation(numbering: eq-numbering)
